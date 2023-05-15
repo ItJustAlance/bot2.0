@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="over">
+  <div class="all">
+    <div class="search">
+    <div class="search__top">
+      <div class="search__search">
+        <input type="text" placeholder="Название новостройки или застройщика" class="search__input">
+        <button class="search__btn">
+          <svg class="search-24" viewBox="0 0 24 24">
+              <path d="M15.601 14.187A6.961 6.961 0 0017 10a7 7 0 10-7 7 6.959 6.959 0 004.187-1.399L19.586 21 21 19.586l-5.399-5.399zM10 15a5 5 0 110-10 5 5 0 110 10z"></path>
+          </svg>
+        </button>
+      </div>
+    </div><!--end search__top -->
+    <div class="search__content">
+      <div class="search__content-scroll">
+        <div class="search-box">
+          <div class="search-box__title">Расположение</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <div class="select-wrapper">
+                <select id="novossearch-location" class="cf_select" name="location" onchange="$scope.onChangeDistrict(this)">
+                  <option value="">Регион</option>
+                  <option value="msk">Москва</option>
+                  <option value="mo">Московская область</option>
+                  <option value="newmsk">Новая Москва</option>
+                </select>
+              </div>
+            </div>
+            <div class="list-popups">
+              <div class="list-popups__item">
+                <button data-modal="modal-metro" class="btn-modal-open js-popup-open">
+                <span class="ico"><svg class="plus" viewBox="0 0 24 24">
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                </svg>
+              </span>
+                Метро 
+                <span class="num">2</span>
+                <span class="delete">
+                  <svg id="cancel-24" viewBox="0 0 24 24">
+                    <path d="M12 2C6.471 2 2 6.47 2 12c0 5.529 4.471 10 10 10s10-4.471 10-10c0-5.53-4.471-10-10-10zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"></path>
+                </svg>
+                </span>
+                </button>
+              </div>
+              <div class="list-popups__item"><button data-modal="modal-mcd" class="btn-modal-open js-popup-open">
+               <span class="ico"><svg class="plus" viewBox="0 0 24 24">
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                </svg>
+              </span>
+              МЦД</button></div>
+              <div class="list-popups__item"><button data-modal="modal-zd" class="btn-modal-open js-popup-open">
+               <span class="ico"><svg class="plus" viewBox="0 0 24 24">
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                </svg>
+              </span>
+              Ж/Д-станции</button></div>
+              <div class="list-popups__item"><button data-modal="modal-highway" class="btn-modal-open js-popup-open">
+               <span class="ico"><svg class="plus" viewBox="0 0 24 24">
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                </svg>
+              </span>
+              Шоссе</button></div>
+              <div class="list-popups__item"><button data-modal="modal-areas" class="btn-modal-open js-popup-open">
+               <span class="ico"><svg class="plus" viewBox="0 0 24 24">
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                </svg>
+              </span>
+              Районы</button></div>
+              <div class="list-popups__item"><button data-modal="modal-city-mo" class="btn-modal-open js-popup-open">
+               <span class="ico"><svg class="plus" viewBox="0 0 24 24">
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                </svg>
+              </span>
+              Города МО</button></div>
+              <div class="list-popups__item"><button data-modal="modal-areas-mo" class="btn-modal-open js-popup-open">
+                <span class="ico"><svg class="plus" viewBox="0 0 24 24">
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                </svg>
+              </span>
+                Районы МО
+              </button></div>
+            </div>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        
+        
+        <div class="search-box">
+          <div class="search-box__title">Цена за квартиру</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" placeholder="от" type="text">
+            </div>
+            <div class="search-item-row">
+              <input class="search__input" placeholder="до" type="text">
+            </div>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+          <div class="search-box__title">Комнатность</div>
+          <div class="search-box__body">
+            <ul class="list-search">
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg1" type="checkbox" value="1">
+                  <label for="cg1">Студии</label>
+                </div>
+              </li>
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg2" type="checkbox" value="1">
+                  <label for="cg2">1</label>
+                </div>
+              </li>
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg3" type="checkbox" value="1">
+                  <label for="cg3">2</label>
+                </div>
+              </li>
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg4" type="checkbox" value="1">
+                  <label for="cg4">3</label>
+                </div>
+              </li>
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg5" type="checkbox" value="1">
+                  <label for="cg5">4+</label>
+                </div>
+              </li>
+            </ul>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+          <div class="search-box__title">Срок сдачи</div>
+          <div class="search-box__body">
+            <ul class="list-search">
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg6" type="checkbox" value="1">
+                  <label for="cg6">Дом сдан</label>
+                </div>
+              </li>
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg7" type="checkbox" value="1">
+                  <label for="cg7">2023</label>
+                </div>
+              </li>
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg8" type="checkbox" value="1">
+                  <label for="cg8">2024</label>
+                </div>
+              </li>
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg9" type="checkbox" value="1">
+                  <label for="cg9">2025</label>
+                </div>
+              </li>
+              <li class="search-item-row item">
+                <div class="rc-item rc-item--checkbox">
+                  <input id="cg0" type="checkbox" value="1">
+                  <label for="cg0">2026</label>
+                </div>
+              </li>
+            </ul>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box ">
+          <div class="search-box__title">Отделка</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+                  <div class="select-wrapper">
+                    <select id="novossearch-finishing" class="cf_select" name="finishing">
+                    <option value="">Любая</option>
+                    <option value="0">Без отделки</option>
+                    <option value="1">Под чистовую</option>
+                    <option value="2">Чистовая</option>
+                    </select>
+                    <div class="select-arr">
+                      <svg viewBox="0 0 24 24">
+                        <g>
+                        <path d="M16.59 8.295L12 12.875l-4.59-4.58L6 9.705l6 6 6-6-1.41-1.41z"></path>
+                        </g>
+                      </svg>
+                    </div>  
+                  </div>
+                </div>
+                <ul class="list-search">
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c1" type="checkbox" value="1">
+                      <label for="c1">Есть скидки</label>
+                    </div>
+                  </li>
+                </ul>
+            <div class="search-toggler js-search-toggler__wrapper">
+              <div class="search-toggler__content js-search-toggler__content">
+                <ul class="list-search">
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c2" type="checkbox" value="1">
+                      <label for="c2">Ипотека</label>
+                    </div>
+                  </li>
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c3" type="checkbox" value="1">
+                      <label for="c3">Материнский капитал</label>
+                    </div>
+                  </li>
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c4" type="checkbox" value="1">
+                      <label for="c4">Эскроу-счет</label>
+                    </div>
+                  </li>
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c5" type="checkbox" value="1">
+                      <label for="c5">Старт продаж</label>
+                    </div>
+                  </li>
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c6" type="checkbox" value="1">
+                      <label for="c6">Семейная ипотека 6%</label>
+                    </div>
+                  </li>
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c7" type="checkbox" value="1">
+                      <label for="c7">Рассрочка</label>
+                    </div>
+                  </li>
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c8" type="checkbox" value="1">
+                      <label for="c8">Панорамные окна</label>
+                    </div>
+                  </li>
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c9" type="checkbox" value="1">
+                      <label for="c9">Рядом парк</label>
+                    </div>
+                  </li>
+                  <li class="search-item-row item">
+                    <div class="rc-item rc-item--checkbox">
+                      <input id="c10" type="checkbox" value="1">
+                      <label for="c10">Системообразующий застройщик</label>
+                    </div>
+                  </li>
+                </ul> 
+                <div class="search-item-row">
+                  <div class="select-wrapper">
+                    <select id="novossearch-rooms_floor" class="cf_select" name="rooms_floor">
+                    <option value="">Кол-во квартир на этаже</option>
+                    <option value="6">не больше 6</option>
+                    <option value="4">не больше 4</option>
+                    </select>
+                    <div class="select-arr">
+                      <svg viewBox="0 0 24 24">
+                        <g>
+                        <path d="M16.59 8.295L12 12.875l-4.59-4.58L6 9.705l6 6 6-6-1.41-1.41z"></path>
+                        </g>
+                      </svg>
+                    </div>  
+                  </div>
+                </div>
+                <div class="search-item-row">
+                  <div class="select-wrapper">
+                    <select id="novossearch-aparts" class="cf_select" name="aparts">
+                    <option value="">Апартаменты и квартиры</option>
+                    <option value="0">Только квартиры</option>
+                    <option value="1">Только апартаменты</option>
+                    </select>
+                    <div class="select-arr">
+                      <svg viewBox="0 0 24 24">
+                        <g>
+                        <path d="M16.59 8.295L12 12.875l-4.59-4.58L6 9.705l6 6 6-6-1.41-1.41z"></path>
+                        </g>
+                      </svg>
+                    </div>  
+                  </div>
+                </div>
+              </div>
+              <div class="search-toggler__btn js-search-toggler__btn">
+                <div class="text">Больше параметров</div>
+              </div>
+            </div><!--end search-toggler -->
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+      </div><!--end search__content-scroll -->
+    </div><!--end search__content -->
+    <div class="search__bottom">
+      <div class="b-btn">
+        <button class="btn-search-result">Посмотреть 233 ЖК</button>
+      </div>
+    </div>
+  </div><!--end search -->
+  </div><!--end all -->
+</div><!--end over -->
+<div class="b-modal" id="modal-metro">
+  <div class="b-modal-header">
+    <div class="b-modal-header__title">Метро</div>
+    <button class="b-modal-close js-modal-close">Закрыть</button>
+  </div><!--end modal-header -->
+  <div class="b-modal-content">
+    <div class="b-modal-wrapper">
+      <div class="all">
+        <div class="search-box">
+            <div class="search-box__title">Поиск метро</div>
+            <div class="search-box__body">
+              <div class="search-item-row">
+                <input class="search__input" type="text">
+              </div>
+            </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+          <div class="search-box__title">До метро не более</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" type="text">
+            </div>
+            <div class="search-item-row">
+              <div class="select-wrapper">
+                <select class="cf_select" name="finishing">
+                  <option value="">Пешком</option>
+                  <option value="0">Ползком</option>
+                </select>
+                <div class="select-arr">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M16.59 8.295L12 12.875l-4.59-4.58L6 9.705l6 6 6-6-1.41-1.41z"></path>
+                  </svg>
+                </div>  
+              </div>
+            </div><!--end search-item-row -->
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+          <div class="list-abc-box js-list-abc-box-wrapper">
+            <div class="list-abc-box-result js-list-abc-box-result">
+              <div class="list-abc-box__selected">Выбрано: 
+                <span class="list-abc-box__selected js-list-abc-box__selected">0</span>
+              </div>
+              <div class="list-abc-box__btn-result"><button class="btn-result">Показать</button></div>
+            </div><!--end list-abc-box-result -->
+            <div class="list-abc">
+              <div class="list-abc__title">A</div>
+              <ul class="list-abc__list">
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1119" type="checkbox" value="1">
+                      <label for="c1119"><span>Авиамоторная1</span></label>
+                    </div>
+                </li>
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1118" type="checkbox" value="1">
+                      <label for="c1118"><span>Авиамоторная2</span></label>
+                    </div>
+                </li>
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1117" type="checkbox" value="1">
+                      <label for="c1117"><span>Авиамоторная3</span></label>
+                    </div>
+                </li>
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1116" type="checkbox" value="1">
+                      <label for="c1116"><span>Авиамоторная4</span></label>
+                    </div>
+                </li>
+              </ul>
+            </div><!--end list-abc -->
+            <div class="list-abc">
+              <div class="list-abc__title">Б</div>
+              <ul class="list-abc__list">
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1111" type="checkbox" value="1">
+                      <label for="c1111"><span>Барнаульская5</span></label>
+                    </div>
+                </li>
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1113" type="checkbox" value="1">
+                      <label for="c1113"><span>Барнаульская6</span></label>
+                    </div>
+                </li>
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1112" type="checkbox" value="1">
+                      <label for="c1112"><span>Барнаульская7</span></label>
+                    </div>
+                </li>
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1114" type="checkbox" value="1">
+                      <label for="c1114"><span>Барнаульская8</span></label>
+                    </div>
+                </li>
+                <li class="list-abc__item">
+                  <div class="rc-item rc-item--abc js-rc-item--abc">
+                      <input class="js-rc-item__input" id="c1115" type="checkbox" value="1">
+                      <label for="c1115"><span>Барнаульская9</span></label>
+                    </div>
+                </li>
+              </ul>
+            </div><!--end list-abc -->
+          </div><!--end list-abc-box -->
+        </div><!--end search-box -->
+      </div><!--end all -->
+    </div><!--end b-modal-wrapper -->
+  </div><!--end modal-content -->
+  <div class="b-modal-footer">
+    <button class="modal-send">Применить</button>
+  </div><!--end modal-footer -->
+</div><!--end b-modal -->
+
+
+<div class="b-modal" id="modal-mcd">
+  <div class="b-modal-header">
+    <div class="b-modal-header__title">МЦД</div>
+    <button class="b-modal-close js-modal-close">Закрыть</button>
+  </div><!--end modal-header -->
+  <div class="b-modal-content">
+    <div class="b-modal-wrapper">
+      <div class="all">
+        <div class="search-box">
+          <div class="search-box__title">Поиск по МЦД</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" type="text">
+            </div>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+          <div class="search-box__title">До МЦД не более</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" type="text">
+            </div>
+            <div class="search-item-row">
+              <div class="select-wrapper">
+                <select class="cf_select" name="finishing">
+                  <option value="">Пешком</option>
+                  <option value="0">Ползком</option>
+                </select>
+                <div class="select-arr">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M16.59 8.295L12 12.875l-4.59-4.58L6 9.705l6 6 6-6-1.41-1.41z"></path>
+                  </svg>
+                </div>  
+              </div>
+            </div><!--end search-item-row -->
+          </div><!--end search-box__body -->
+        </div><!--end search-box --> 
+        <div class="search-box">
+          <div class="js-group-wrapper">
+            <div class="search-item-row">
+              <ul class="list-abc-group">
+                <li><span data-group="d1,d2" class="list-abc-group__item js-list-abc-group__item">МЦД-1</span></li>
+                <li><span data-group="d3,d4"  class="list-abc-group__item js-list-abc-group__item">МЦД-2</span></li>
+              </ul>
+            </div>
+            <div class="list-abc-box js-list-abc-box-wrapper">
+              <div class="list-abc-box-result js-list-abc-box-result">
+                <div class="list-abc-box__selected">Выбрано: 
+                  <span class="list-abc-box__selected js-list-abc-box__selected">0</span>
+                </div>
+                <div class="list-abc-box__btn-result"><button class="btn-result">Показать</button></div>
+              </div><!--end list-abc-box-result -->
+              <div class="list-abc">
+                <div class="list-abc__title">A</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="d1" type="checkbox" value="1">
+                        <label for="d1"><span>Авиамоторная1</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="d2" type="checkbox" value="1">
+                        <label for="d2"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="d4" type="checkbox" value="1">
+                        <label for="d4"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+              <div class="list-abc">
+                <div class="list-abc__title">Б</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="d3" type="checkbox" value="1">
+                        <label for="d3"><span>Барнаульская5</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+            </div><!--end list-abc-box -->
+          </div><!--end js-group-wrapper -->
+        </div><!--end search-box -->
+      </div><!--end all -->
+    </div><!--end b-modal-wrapper -->
+  </div><!--end modal-content -->
+  <div class="b-modal-footer">
+    <button class="modal-send">Применить</button>
+  </div><!--end modal-footer -->
+</div><!--end b-modal -->
+
+<div class="b-modal" id="modal-zd">
+  <div class="b-modal-header">
+    <div class="b-modal-header__title">Ж/Д-станции</div>
+    <button class="b-modal-close js-modal-close">Закрыть</button>
+  </div><!--end modal-header -->
+  <div class="b-modal-content">
+    <div class="b-modal-wrapper">
+      <div class="all">
+        <div class="search-box">
+          <div class="search-box__title">Поиск по ЖД</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" type="text">
+            </div>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+          <div class="search-box__title">До ЖД не более</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" placeholder="Минут" type="text">
+            </div>
+            <div class="search-item-row">
+              <div class="select-wrapper">
+                <select class="cf_select" name="finishing">
+                  <option value="">Пешком</option>
+                  <option value="0">Ползком</option>
+                </select>
+                <div class="select-arr">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M16.59 8.295L12 12.875l-4.59-4.58L6 9.705l6 6 6-6-1.41-1.41z"></path>
+                  </svg>
+                </div>  
+              </div>
+            </div><!--end search-item-row -->
+          </div><!--end search-box__body -->
+        </div><!--end search-box --> 
+        <div class="search-box">
+          <div class="js-group-wrapper">
+            <div class="search-item-row">
+              <ul class="list-abc-group">
+                <li><span data-group="dd1,dd2" class="list-abc-group__item js-list-abc-group__item">Белорусское</span></li>
+                <li><span data-group="dd3,dd4"  class="list-abc-group__item js-list-abc-group__item">Горьковское</span></li>
+              </ul>
+            </div>
+            <div class="list-abc-box js-list-abc-box-wrapper">
+              <div class="list-abc-box-result js-list-abc-box-result">
+                <div class="list-abc-box__selected">Выбрано: 
+                  <span class="list-abc-box__selected js-list-abc-box__selected">0</span>
+                </div>
+                <div class="list-abc-box__btn-result"><button class="btn-result">Показать</button></div>
+              </div><!--end list-abc-box-result -->
+              <div class="list-abc">
+                <div class="list-abc__title">A</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="dd1" type="checkbox" value="1">
+                        <label for="dd1"><span>Авиамоторная1</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="dd2" type="checkbox" value="1">
+                        <label for="dd2"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="dd4" type="checkbox" value="1">
+                        <label for="dd4"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+              <div class="list-abc">
+                <div class="list-abc__title">Б</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="dd3" type="checkbox" value="1">
+                        <label for="dd3"><span>Барнаульская5</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+            </div><!--end list-abc-box -->
+          </div><!--end js-group-wrapper -->
+        </div><!--end search-box -->
+
+      </div><!--end all -->
+    </div><!--end b-modal-wrapper -->
+  </div><!--end modal-content -->
+  <div class="b-modal-footer">
+    <button class="modal-send">Применить</button>
+  </div><!--end modal-footer -->
+</div><!--end b-modal -->
+
+<div class="b-modal" id="modal-highway">
+  <div class="b-modal-header">
+    <div class="b-modal-header__title">Шоссе</div>
+    <button class="b-modal-close js-modal-close">Закрыть</button>
+  </div><!--end modal-header -->
+  <div class="b-modal-content">
+    <div class="b-modal-wrapper">
+      <div class="all">
+        <div class="search-box">
+          <div class="search-box__title">Поиск по Шоссе</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" type="text">
+            </div>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+            <div class="list-abc-box js-list-abc-box-wrapper">
+              <div class="list-abc-box-result js-list-abc-box-result">
+                <div class="list-abc-box__selected">Выбрано: 
+                  <span class="list-abc-box__selected js-list-abc-box__selected">0</span>
+                </div>
+                <div class="list-abc-box__btn-result"><button class="btn-result">Показать</button></div>
+              </div><!--end list-abc-box-result -->
+              <div class="list-abc">
+                <div class="list-abc__title">A</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="add1" type="checkbox" value="1">
+                        <label for="add1"><span>Авиамоторная1</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="add2" type="checkbox" value="1">
+                        <label for="add2"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="add4" type="checkbox" value="1">
+                        <label for="add4"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+              <div class="list-abc">
+                <div class="list-abc__title">Б</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="add3" type="checkbox" value="1">
+                        <label for="add3"><span>Барнаульская5</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+            </div><!--end list-abc-box -->
+        </div><!--end search-box -->
+
+      </div><!--end all -->
+    </div><!--end b-modal-wrapper -->
+  </div><!--end modal-content -->
+  <div class="b-modal-footer">
+    <button class="modal-send">Применить</button>
+  </div><!--end modal-footer -->
+</div><!--end b-modal -->
+
+<div class="b-modal" id="modal-areas">
+  <div class="b-modal-header">
+    <div class="b-modal-header__title">Районы</div>
+    <button class="b-modal-close js-modal-close">Закрыть</button>
+  </div><!--end modal-header -->
+  <div class="b-modal-content">
+    <div class="b-modal-wrapper">
+      <div class="all">
+        <div class="search-box">
+          <div class="search-box__title">Поиск по Районам</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" type="text">
+            </div>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+         
+        <div class="search-box">
+          <div class="js-group-wrapper">
+            <div class="search-item-row">
+              <ul class="list-abc-group">
+                <li><span data-group="wwdd1,wwdd2" class="list-abc-group__item js-list-abc-group__item">Белорусское</span></li>
+                <li><span data-group="wwdd3,wwdd4"  class="list-abc-group__item js-list-abc-group__item">Горьковское</span></li>
+              </ul>
+            </div>
+            <div class="list-abc-box js-list-abc-box-wrapper">
+              <div class="list-abc-box-result js-list-abc-box-result">
+                <div class="list-abc-box__selected">Выбрано: 
+                  <span class="list-abc-box__selected js-list-abc-box__selected">0</span>
+                </div>
+                <div class="list-abc-box__btn-result"><button class="btn-result">Показать</button></div>
+              </div><!--end list-abc-box-result -->
+              <div class="list-abc">
+                <div class="list-abc__title">A</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="wwdd1" type="checkbox" value="1">
+                        <label for="wwdd1"><span>Авиамоторная1</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="wwdd2" type="checkbox" value="1">
+                        <label for="wwdd2"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="wwdd4" type="checkbox" value="1">
+                        <label for="wwdd4"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+              <div class="list-abc">
+                <div class="list-abc__title">Б</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="dd3" type="checkbox" value="1">
+                        <label for="dd3"><span>Барнаульская5</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+            </div><!--end list-abc-box -->
+          </div><!--end js-group-wrapper -->
+        </div><!--end search-box -->
+
+      </div><!--end all -->
+    </div><!--end b-modal-wrapper -->
+  </div><!--end modal-content -->
+  <div class="b-modal-footer">
+    <button class="modal-send">Применить</button>
+  </div><!--end modal-footer -->
+</div><!--end b-modal -->
+
+<div class="b-modal" id="modal-city-mo">
+  <div class="b-modal-header">
+    <div class="b-modal-header__title">Города МО</div>
+    <button class="b-modal-close js-modal-close">Закрыть</button>
+  </div><!--end modal-header -->
+  <div class="b-modal-content">
+    <div class="b-modal-wrapper">
+      <div class="all">
+        <div class="search-box">
+          <div class="search-box__title">Поиск по Городам МО</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" type="text">
+            </div>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+            <div class="list-abc-box js-list-abc-box-wrapper">
+              <div class="list-abc-box-result js-list-abc-box-result">
+                <div class="list-abc-box__selected">Выбрано: 
+                  <span class="list-abc-box__selected js-list-abc-box__selected">0</span>
+                </div>
+                <div class="list-abc-box__btn-result"><button class="btn-result">Показать</button></div>
+              </div><!--end list-abc-box-result -->
+              <div class="list-abc">
+                <div class="list-abc__title">A</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="qadd1" type="checkbox" value="1">
+                        <label for="qadd1"><span>Авиамоторная1</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="qadd2" type="checkbox" value="1">
+                        <label for="qadd2"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="qadd4" type="checkbox" value="1">
+                        <label for="qadd4"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+              <div class="list-abc">
+                <div class="list-abc__title">Б</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="add3" type="checkbox" value="1">
+                        <label for="add3"><span>Барнаульская5</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+            </div><!--end list-abc-box -->
+        </div><!--end search-box -->
+
+      </div><!--end all -->
+    </div><!--end b-modal-wrapper -->
+  </div><!--end modal-content -->
+  <div class="b-modal-footer">
+    <button class="modal-send">Применить</button>
+  </div><!--end modal-footer -->
+</div><!--end b-modal -->
+
+<div class="b-modal" id="modal-areas-mo">
+  <div class="b-modal-header">
+    <div class="b-modal-header__title">Районы МО</div>
+    <button class="b-modal-close js-modal-close">Закрыть</button>
+  </div><!--end modal-header -->
+  <div class="b-modal-content">
+    <div class="b-modal-wrapper">
+      <div class="all">
+        <div class="search-box">
+          <div class="search-box__title">Поиск по Району</div>
+          <div class="search-box__body">
+            <div class="search-item-row">
+              <input class="search__input" type="text">
+            </div>
+          </div><!--end search-box__body -->
+        </div><!--end search-box -->
+        <div class="search-box">
+            <div class="list-abc-box js-list-abc-box-wrapper">
+              <div class="list-abc-box-result js-list-abc-box-result">
+                <div class="list-abc-box__selected">Выбрано: 
+                  <span class="list-abc-box__selected js-list-abc-box__selected">0</span>
+                </div>
+                <div class="list-abc-box__btn-result"><button class="btn-result">Показать</button></div>
+              </div><!--end list-abc-box-result -->
+              <div class="list-abc">
+                <div class="list-abc__title">A</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="aadd1" type="checkbox" value="1">
+                        <label for="aadd1"><span>Авиамоторная1</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="aadd2" type="checkbox" value="1">
+                        <label for="aadd2"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="aadd4" type="checkbox" value="1">
+                        <label for="aadd4"><span>Авиамоторная2</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+              <div class="list-abc">
+                <div class="list-abc__title">Б</div>
+                <ul class="list-abc__list">
+                  <li class="list-abc__item">
+                    <div class="rc-item rc-item--abc js-rc-item--abc">
+                        <input class="js-rc-item__input" id="aadd3" type="checkbox" value="1">
+                        <label for="aadd3"><span>Барнаульская5</span></label>
+                      </div>
+                  </li>
+                  
+                </ul>
+              </div><!--end list-abc -->
+            </div><!--end list-abc-box -->
+        </div><!--end search-box -->
+
+      </div><!--end all -->
+    </div><!--end b-modal-wrapper -->
+  </div><!--end modal-content -->
+  <div class="b-modal-footer">
+    <button class="modal-send">Применить</button>
+  </div><!--end modal-footer -->
+</div><!--end b-modal -->
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
