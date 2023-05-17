@@ -321,7 +321,7 @@
     </div><!--end search__content -->
     <div class="search__bottom">
       <div class="b-btn">
-        <button class="btn-search-result">Посмотреть 233 ЖК</button>
+        <button id="btnClose" class="btn-search-result">Посмотреть</button>
       </div>
     </div>
   </div><!--end search -->
@@ -938,7 +938,25 @@
     <button class="modal-send">Применить</button>
   </div><!--end modal-footer -->
 </div><!--end b-modal -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
 <script src="js/jquery.js"></script>
 <script src="js/script.js"></script>
+<script>
+  // узнаем id user
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const telId = urlParams.get('userid')
+
+console.log('telId', telId)
+
+  let tg = window.Telegram.WebApp;
+  let btnClose = document.getElementById("btnClose"); //получаем кнопку активировать/деактивировать
+  btnClose.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+    tg.close();
+    console.log('закрыли');
+  });
+  
+</script>
 </body>
 </html>

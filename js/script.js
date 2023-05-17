@@ -75,22 +75,3 @@ $(function() {
     
 });
 
-
-/*
-<div class="list-abc-box js-list-abc-box-wrapper">
-          <div class="list-abc-box-result js-list-abc-box-result">
-            <div class="list-abc-box__selected">Выбрано: 
-              <span class="list-abc-box__selected">0</span>
-            </div>
-            <div class="list-abc-box__btn-result"><button class="btn-result">Показать</button></div>
-          </div><!--end list-abc-box-result -->
-          <div class="list-abc">
-            <div class="list-abc__title">A</div>
-            <ul class="list-abc__list">
-              <li class="list-abc__item">
-                <div class="rc-item rc-item--abc js-rc-item--abc">
-                    <input class="js-rc-item__input" id="c1119" type="checkbox" value="1">
-                    <label for="c1119"><span>Авиамоторная1</span></label>
-                  </div>
-              </li>
-              */
