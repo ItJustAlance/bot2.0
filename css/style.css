@@ -168,7 +168,7 @@ header {}
 .search-toggler__btn .text {border-bottom: 1px dotted #017eec; color: #017eec; font-size: 14px; display: inline-block; vertical-align: top}
 
 
-.b-modal {position: fixed; display: flex; flex-direction: column; width: 100%; height: 100vh; overflow: hidden; background: #fff; z-index: 10; top: -110vh; left: 0; transition: all 0.3s ease; }
+.b-modal {position: fixed; display: flex !important; flex-direction: column; width: 100%; height: 100vh; overflow: hidden; background: #fff; z-index: 10; top: -110vh; left: 0; transition: all 0.3s ease; }
 .b-modal.show {top: 0;}
 .b-modal-wrapper {overflow: auto; padding: 20px 0; position: absolute;top: 0; left: 0; width: 100%;bottom: 0;}
 .list-abc-box {margin: 15px 0; padding: 20px 0 0;border-top: 1px solid #e0e0e0;}
